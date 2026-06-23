@@ -1,0 +1,140 @@
+/* 공통 리셋 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+summary, ul, li { list-style: none; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+body { font-family: "Noto Sans KR", sans-serif; color: #2b3440; line-height: 1.6; }
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+/* 폭 가두기 + 가운데 정렬 */
+.wrapper { width: 100%; max-width: 1040px; margin: 0 auto; padding: 24px; }
+
+/* 본문 2분할 (7 : 3) */
+/* .main { display: flex; gap: 24px; align-items: flex-start; }
+.content { flex: 7; }
+.side    { flex: 3; } */
+
+
+.myblog a:hover{
+    color: rgb(194, 35, 35);
+    font-weight: bold; /* 원하신다면 글자를 굵게 만들 수도 있습니다 */
+}
+
+.logo{
+    font-size: 26px;
+    font-weight: 900;
+    color: rgb(98, 98, 253);
+}
+
+.info-box {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    line-height: 2.0; /* 줄 간격 확보 */
+}
+
+.logo span{color: black;}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 20px;          /* 글자가 사방에서 20px씩 떨어집니다 */
+}
+
+/* 1. .content를 Flex 컨테이너로 설정 */
+.content {
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    align-items: flex-start; /* 왼쪽 정렬 */
+    justify-content: center; /* 세로 방향 중앙 정렬 */
+    min-height: 50vh; /* 화면의 세로 중앙을 잡기 위해 최소 높이 설정 */
+    padding-left: 20px; /* 왼쪽에서 살짝 띄우기 */
+}
+
+/* 2. .menu-list의 너비 설정 (중앙에 위치할 수 있도록) */
+.menu-list {
+    width: 300px; /* 원하는 만큼 너비 조절 */
+    /* 필요하다면 margin: 0 auto; 를 사용하여 가로 중앙으로도 조정 가능 */
+}
+
+/* 3. details 간의 간격 벌리기 */
+.menu-list details {
+    margin-bottom: 15px; /* 세로로 리스트들이 떨어져 있도록 설정 */
+}
+
+.menu-list {
+    width: 500px;           /* 가로 폭을 고정합니다 */
+    min-height: 300px;      /* 최소 높이를 주어 리스트가 펼쳐져도 전체 틀이 유지되게 합니다 */
+    display: flex;
+    flex-direction: column;
+    padding: 40px; /* 내부 여백 추가 */
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    /* background-color: black; */
+}
+
+/* 제목 스타일 */
+.menu-list h3 {
+    margin-bottom: 25px;    /* 15px -> 25px로 늘림 */
+    font-size: 20px;
+    color: #333;
+}
+
+.keyword {
+    background-color: #353638; /* 연한 파란색 배경 */
+    color: #eceff5;            /* 강조된 파란색 글자 */
+    padding: 2px 8px;          /* 글자 주변 여백 */
+    border-radius: 4px;        /* 모서리 둥글게 */
+    font-weight: bold;         /* 굵게 */
+    border: 1px solid #d2e3fc; /* 연한 테두리 */
+}
+
+.menu-list details {
+    width: 100%;            /* 화면이 좁아지면 100%까지 늘어남 */
+    max-width: 500px;       /* 하지만 500px 이상으로는 커지지 않음 */
+    margin: 0 auto;         /* 자동 가운데 정렬 */
+    /* margin-bottom: 10px; */
+    background: #f9f9f9;    /* 위치가 잘 보이게 배경색 추가 */
+    border-radius: 5px;
+}
+
+.menu-list ul {
+    padding-left: 0; /* 리스트 기본 들여쓰기 제거 */
+    margin-bottom: 5px;
+}
+
+.strong{
+    font-weight: bold;
+}
+
+.menu-list ul li {
+    padding: 15px 20px;     /* 좌우 20px 여백 추가 */
+    margin-left: 0; /* 왼쪽 마진 0으로 설정하여 summary와 시작점 일치 */
+}
+
+.menu-list ul li a:hover {
+    color: rgb(194, 35, 35);
+    font-weight: bold; /* 원하신다면 글자를 굵게 만들 수도 있습니다 */
+    text-decoration: underline; /* 밑줄을 추가하여 더 강조할 수도 있습니다 */
+}
+
+/* 화면 가로폭이 640px 이하일 때 */
+@media (max-width: 640px) {
+  .main { 
+    flex-direction: column; /* 가로(row)에서 세로(column)로 변경 */
+  }
+  
+  .content, .side {
+    flex: 1; /* 너비를 100%로 설정하여 공간 차지 */
+  }
+}
